@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: font-bold;
+    src: url('./assets/fonts/Moderat-Black.ttf');
+}
+
+@font-face {
+    font-family: font-medium;
+    src: url('./assets/fonts/Moderat-Medium.ttf');
+}
+
+@font-face {
+    font-family: font-regular;
+    src: url('./assets/fonts/Moderat-Regular.ttf');
+}
+
+.font-bold {
+    font-family: font-bold !important;
+}
+
+a, p, h1, h2, h3, h4, h5, h6, span, button, table, thead, tr, th, td, tbody {
+    font-family: font-regular !important;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+html, body {
+    background-color: #FFFFFF; 
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+body { 
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: black !important;
+}
+
+.btn:hover {
+    color: white !important;
+}
+
+.pagination-control {
+    text-align: right;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    html, body {
+        padding: 1rem !important;
+    }
+}

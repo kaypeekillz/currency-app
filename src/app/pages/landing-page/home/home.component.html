@@ -1,0 +1,19 @@
+
+<div class="pb-4">
+  <a routerLink="/">Home</a>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-3" *ngFor="let currency of currencies | paginate: { itemsPerPage: 12, currentPage: page }">
+    <div class="card">
+      <img class="card-img-top" src="../../../../assets/images/curency.jpg" alt="currency-img">
+      <div class="card-body">
+        <h5 class="card-title font-bold">{{ currency[0] }}</h5>
+        <p class="card-text">{{ currency[1] }}</p>
+        <a class="btn btn-primary" (click)="view(currency)">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pagination-controls class="pagination-control" (pageChange)="page = $event"></pagination-controls>

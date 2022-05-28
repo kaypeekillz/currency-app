@@ -1,0 +1,40 @@
+<div class="pb-4">
+    <a routerLink="/">Home &nbsp; > </a> &nbsp;
+    <a routerLink="/details">{{ currencyFullname }}</a>
+</div>
+
+<div class="main-section">
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-3">
+            <p class="pb-3 font-bold">{{ currencyFullname }}</p>
+
+            <p class="text-center det">Currency Details</p>
+
+            <div class="p-3 d-flex justify-content-between">
+                <p>Date: </p>
+                <p class="font-bold">{{ details?.date | date }}</p>
+            </div>
+        </div>
+        <div class="p-5 bg-white right-section col-md-12 col-sm-12 col-xs-12 col-lg-9">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Currency Name</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="currencyTypes.length > 0">
+                    <tr *ngFor="let currency of currencyTypes | paginate: { itemsPerPage: 12, currentPage: page }">
+                        <td class="live-trans-tran"><p>{{ currency[0]?.toUpperCase() }}</p></td>
+                        <td class="live-trans-date"><p>{{ currency[1] }}</p></td>
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls *ngIf="currencyTypes.length > 0" class="pagination-control" (pageChange)="page = $event"></pagination-controls>
+            <div *ngIf="currencyTypes.length === 0">
+                <p class="text-center font-bold p-5">No currency types available.</p>
+            </div>
+        </div>
+    </div>
+</div>
