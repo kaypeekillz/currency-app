@@ -25,7 +25,7 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    
   }
 
   getCurrency(name: string) {
@@ -35,11 +35,9 @@ export class DetailsComponent implements OnInit {
         return [key, response[key]];
       });
       let dataObject = data[1][1];
-
       this.currencyTypes = Object.keys(dataObject).map(function (key) {
         return [key, dataObject[key]];
       });
-      console.log("currencyTypes = ", this.currencyTypes);
     });
   }
 

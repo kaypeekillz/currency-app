@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoaderService } from 'src/app/core/loader/loader.service';
 import { CurrencyService } from 'src/app/core/services/currency/currency.service';
 
 @Component({
@@ -12,12 +13,10 @@ export class HomeComponent implements OnInit {
   currencies: any[] = [];
   page: number = 1;
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
     private currencyService: CurrencyService,) { }
 
   ngOnInit(): void {
-    // document.body.scrollTop = 0;
-    // document.documentElement.scrollTop = 0;
     this.getAllCurrencies();
   }
 
